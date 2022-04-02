@@ -1,0 +1,37 @@
+cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+
+mysql -u root -p
+
+show databases;
+
+mysql> use project;
+Database changed
+
+mysql> use project;
+Database changed
+
+mysql> create table patientreport(patientID varchar(10)primary key,symptom varchar(200),diagnosis varchar(200),medicines varchar(200),wardReq varchar(5),typeWard varchar(10));
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> desc patientreport;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| patientID | varchar(10)  | NO   | PRI | NULL    |       |
+| symptom   | varchar(200) | YES  |     | NULL    |       |
+| diagnosis | varchar(200) | YES  |     | NULL    |       |
+| medicines | varchar(200) | YES  |     | NULL    |       |
+| wardReq   | varchar(5)   | YES  |     | NULL    |       |
+| typeWard  | varchar(10)  | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+6 rows in set (0.14 sec)
+
+mysql> select *from patientreport;
+
++-----------+---------+-------------+-------------+---------+----------+
+| patientID | symptom | diagnosis   | medicines   | wardReq | typeWard |
++-----------+---------+-------------+-------------+---------+----------+
+| 1         | fever   | viral fever | dcold total | YES     | Single   |
++-----------+---------+-------------+-------------+---------+----------+
+1 row in set (0.00 sec)
+
